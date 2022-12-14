@@ -1,0 +1,224 @@
+@import './variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    font-family: $fontFamily;
+    @include flexCenter(column);
+    overflow: hidden;
+
+    h1 {
+        display: none;
+    }
+
+    .contact {
+        width: 100vw;
+        border: none;
+        border-radius: 5px;
+
+        &_info {
+            background-image: url(../assets/dark.avif);
+            background-repeat: no-repeat;
+            object-fit: contain;
+            @include flexCenter(column);
+            color: white;
+            padding-bottom: 10px;
+
+            &__details {
+                width: 100%;
+                padding-left: 20px;
+                @include flexCenter(row);
+                justify-content: flex-start;
+
+                svg {
+                    fill: white;
+                    width: 15px;
+                    margin-right: 30px
+                }
+
+                p {
+                    @include flexCenter(column);
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin: 20px 0px;
+                    width: 60%;
+
+                    span {
+                        font-size: 12px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+    
+        &_form {
+            width: inherit;
+            @include flexCenter(column);
+
+            h3 {
+                width: inherit;
+                padding-left: 20px;
+                margin-top: 10px;
+                text-align: left;
+                color: $apricotColor;
+                text-shadow: 1px 1px 1px black;
+            }
+
+            form {
+                padding: 20px;
+                width: inherit;
+                @include flexCenter(column);
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                label {
+                    font-size: 10px;
+                    margin: 8px 0px;
+                }
+
+                input {
+                    margin-bottom: 10px;
+                    width: 100%;
+                    max-width: 600px;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: 1px solid rgb(218, 218, 218);
+                    outline-color: $apricotColor;
+
+                    &:focus {
+                        outline: $apricotColor;
+                    }
+
+                    &::placeholder {
+                        color: grey;
+                        font-family: $fontFamily;
+                    }
+                }
+
+                textarea {
+                    margin-bottom: 10px;
+                    width: 100%;
+                    max-width: 600px;
+                    height: 150px;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: 1px solid rgb(218, 218, 218);
+                    outline-color: $apricotColor;
+
+                    &::placeholder {
+                        font-family: $fontFamily;
+                        color: grey;
+                    }
+
+                    &:focus {
+                        outline: $apricotColor;
+                    }
+                }
+
+                input[type=submit] { 
+                    background-color: $apricotColor;
+                    color: white;
+                    margin-top: 10px;
+                    border: 1px solid $apricotColor;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $apricotColor;
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        @include flexCenter(column);
+        justify-content: space-around;
+    
+        h1 {
+            margin-bottom: 30px;
+            display: block;
+        }
+    
+        .contact {
+            border: 1px solid grey;
+            @include flexCenter(row);
+            width: 80vw;
+            max-width: 1280px;
+            height: 80vh;
+    
+            &_info {
+                width: 50vw;
+                height: 100%;
+                background-image: url(../assets/window.avif);
+                background-repeat: no-repeat;
+                object-fit: cover;
+                @include flexCenter(column);
+                color: white;
+    
+                &__details {
+                    width: 80%;
+                    @include flexCenter(row);
+                    justify-content: flex-start;
+    
+                    svg {
+                        fill: white;
+                        width: 15px;
+                        margin-right: 30px
+                    }
+    
+                    p {
+                        @include flexCenter(column);
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        margin: 20px 0px;
+    
+                        span {
+                            font-size: 12px;
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        
+            &_form {
+                width: 45vw;
+                height: inherit;
+                @include flexCenter(column);
+                justify-content: space-around;
+    
+                h3 {
+                    text-align: center;
+                }
+    
+                form {
+                    padding: 0px;
+                    width: 90%;
+                    height: 80%;
+                    @include flexCenter(column);
+                    justify-content: flex-start;
+                    align-items: flex-start;
+    
+                    textarea {
+                        width: 100%;
+                        height: 80px;
+                    }
+    
+                    input[type=submit] {
+                        width: 50%;
+                        margin: 0 auto;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
