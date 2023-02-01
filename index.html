@@ -55,7 +55,7 @@
 
                 <form action="">
                     <label for="name">Tell US YOUR NAME</label>
-                    <input type="text" id="name" placeholder="Name" max="20" required>
+                    <input type="text" id="name" pattern="/^[A-Za-z]+$/" placeholder="Name" required>
 
                     <label for="email">ENTER YOUR EMAIL</label>
                     <input type="text" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" required>
